@@ -45,12 +45,12 @@ export default function App() {
           <div className="space-y-6">
             {experience.map((e) => (
               <div className="bg-gray-900 p-6 rounded-2xl flex gap-2">
-                <img src={e.icon} alt="company icon" className="w-25 h-25 rounded-2xl " />
+                <img src={e.icon} alt="company icon" className="w-30 h-25 rounded-2xl " />
                 <div>
                   <h3 className="font-semibold">{e.title} • {e.role}</h3>
-                  <div className="flex gap-3 text-sm">
+                  <div className="flex gap-3 text-sm flex-wrap py-2">
                     {e.stack.map((s) => (
-                      <span key={s} className="px-3 py-1 bg-gray-800 rounded-full">{s}</span>
+                      <span key={s} className="px-2 py-0.5 bg-gray-800 w-auto rounded-full text-center">{s}</span>
                     ))}
                   </div>
                   <div className="p-2 flex gap-2 flex-col">
@@ -161,6 +161,85 @@ const projects = [
 
 const experience = [
   {
+    title: 'E-Wallet & E-Banking Integration Platform',
+    role: 'Full Stack Engineer',
+    stack: [
+      'Spring Boot',
+      'Microservices',
+      'REST APIs',
+      'External API Integration',
+      'Oracle Database',
+      'React',
+      'Java',
+      'SQL',
+      'Postman',
+      'Role-Based Access Control',
+      'E-Banking Systems',
+      'Financial Transaction Processing'
+    ],
+    company: 'Adria Business & Technology',
+    type: 'Internship',
+    description: `
+    Enterprise e-wallet platform built with Spring Boot microservices, React, and Oracle, integrating external banking operators, role & plafond management, and real e-banking transaction flows.
+    `,
+    Highlights: [
+      'Enterprise e-wallet platform integrated with an e-banking ecosystem',
+      'Microservices architecture using Spring Boot',
+      'External operator API integration for transaction confirmation',
+      'Shared transaction flow extended via inherited controllers and services',
+      'Role and plafond management across client, admin, and banking platforms',
+      'Oracle database integration with structured SQL script organization',
+      'Frontend features built with React',
+      'Postman collections shared with mobile teams for parallel development',
+      'On-site deployment, testing, and bug fixing in client environments',
+      'Strong collaboration with finance teams and e-banking stakeholders'
+    ],
+    date: 'Feb 2024 - Jul 2024 · 6 mounths → Full-Time (Jul 2024 – Present)',
+    adresse: 'Casablanca-Settat, Morocco',
+    icon: '/adria_logo.png'
+  },
+  {
+    title: 'Scalable E-Commerce Platform',
+    role: 'Full Stack Engineer',
+    stack: [
+      'Spring Boot',
+      'Spring Cloud',
+      'Microservices',
+      'API Gateway',
+      'Service Discovery',
+      'JWT Authentication',
+      'Resilience4j',
+      'Apache Kafka',
+      'Stripe API',
+      'ELK Stack',
+      'Zipkin',
+      'Prometheus',
+      'Grafana',
+      'React',
+      'CSS'
+    ],
+    company: 'Ecole Nationale des Sciences Appliquées de Khouribga',
+    type: 'Internship',
+    description: `
+    Microservices-based e-commerce platform using Spring Boot & React, featuring API Gateway architecture, Kafka messaging, JWT security, Stripe payments, and full observability with ELK, Zipkin, and Grafana.
+    `,
+    Highlights: [
+      'Microservices architecture with API Gateway & service discovery',
+      'Secure authentication using JWT',
+      'Stripe API integration for payment processing',
+      'Fault-tolerant synchronous calls using Resilience4j',
+      'Asynchronous, event-driven messaging with Kafka',
+      'Centralized logging with ELK Stack',
+      'Distributed tracing using Zipkin',
+      'Performance monitoring via Prometheus & Grafana',
+      'Frontend built with React and custom CSS',
+      'Designed and implemented during a professional internship'
+    ],
+    date: 'Jul 2023 - Aug 2023 · 2 mounths',
+    adresse: 'Khouribga, Béni Mellal-Khénifra, Morocco',
+    icon: '/ensa_logo.png'
+  },
+  {
     title: 'Intern Management Desktop App',
     role: 'Full Stack Engineer',
     stack: ['Electron.js', 'Node.js', 'Word/PDF/Excel'],
@@ -176,7 +255,7 @@ const experience = [
       'Focus on real business workflows and productivity',
       'Built and delivered during a professional internship'
     ],
-    date: 'Aug 2022 - 1 mois',
+    date: 'Aug 2022 · 1 mounth',
     adresse: 'Khouribga, Béni Mellal-Khénifra, Morocco',
     icon: '/ocp_logo.jpg'
   }
