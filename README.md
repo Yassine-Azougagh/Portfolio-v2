@@ -1,16 +1,118 @@
-# React + Vite
+# 💼 Full Stack Engineer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio showcasing my work as a **Full-Stack Engineer**, with a strong focus on **backend architecture**, **scalable systems**, and **real-world business applications**.
 
-Currently, two official plugins are available:
+This portfolio highlights projects built during professional internships and ongoing work, covering **microservices**, **e-banking systems**, **desktop applications**, and **modern frontend development**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Live Demo
+👉 https://your-portfolio-url.vercel.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧠 About Me
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+I’m a full-stack engineer working with **Spring Boot** and **React**, experienced in building production-grade systems involving:
+- Microservices architectures
+- Secure APIs
+- Asynchronous messaging
+- Observability & monitoring
+- Financial and e-banking platforms
+
+I started as an intern and continued working with the same company after completing my internship, contributing to real client projects and deployments.
+
+---
+
+## 🧩 Featured Projects
+
+### 🏢 Intern Management Desktop App
+**Electron.js | Node.js | Word / Excel / PDF**
+
+A cross-platform desktop application that automates intern registration through a structured form interface and dynamically generates official documents.
+
+**Highlights**
+- Form-driven UI with data validation
+- Automated document generation
+- Designed for real operational workflows
+- Built and delivered during a professional internship
+
+---
+
+### 🛒 Scalable E-Commerce Platform
+**Spring Boot Microservices | React | Kafka | Stripe**
+
+A production-oriented e-commerce platform designed with scalability, resilience, and observability in mind.
+
+**Highlights**
+- API Gateway & service discovery
+- JWT-based authentication
+- Stripe payment integration
+- Resilience4j for fault tolerance
+- Kafka for event-driven communication
+- ELK, Zipkin, Prometheus & Grafana for observability
+
+---
+
+### 💳 E-Wallet & E-Banking Integration Platform
+**Spring Boot | React | Oracle DB | Microservices**
+
+An enterprise e-wallet solution integrated into an existing e-banking ecosystem, following strict financial transaction flows.
+
+**Highlights**
+- Integration with external banking operators
+- Shared transaction flow extended via inheritance
+- Role & plafond management (client, admin, bank)
+- Oracle DB script organization
+- On-site deployment, testing, and client collaboration
+- Close communication with finance and mobile teams
+
+---
+
+## 🛠 Tech Stack
+
+**Backend**
+- Java, Spring Boot, Spring Cloud
+- Microservices, REST APIs
+- JWT Authentication
+- Kafka, Resilience4j
+
+**Frontend**
+- React
+- HTML, CSS, Tailwind CSS
+
+**Databases**
+- Oracle Database
+- PostgreSQL
+
+**Observability & Tools**
+- ELK Stack
+- Zipkin
+- Prometheus & Grafana
+- Docker
+- Postman
+- Git
+
+---
+
+## 📂 Project Structure
+
+portfolio/
+├── src/
+│   ├── assets/
+│   │   ├── images/
+│   │   │   ├── intern-management.png
+│   │   │   ├── ecommerce-platform.png
+│   │   │   └── ewallet.png
+│   │   └── icons/
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+├── public/
+│   └── resume.pdf
+│
+├── index.html
+├── package.json
+└── README.md
