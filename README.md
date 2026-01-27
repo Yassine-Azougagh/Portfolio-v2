@@ -96,7 +96,7 @@ An enterprise e-wallet solution integrated into an existing e-banking ecosystem,
 ---
 
 ## 📂 Project Structure
-
+```text
 portfolio/
 ├── src/
 │   ├── assets/
@@ -116,3 +116,4 @@ portfolio/
 ├── index.html
 ├── package.json
 └── README.md
+```
