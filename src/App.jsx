@@ -87,10 +87,10 @@ export default function App() {
               >
                 <h3 className="text-xl font-semibold mb-2">{p.title}</h3>
                 <p className="text-gray-400 mb-4">{p.desc}</p>
-                <div className="flex gap-3 text-sm">
-                  {p.stack.map((s) => (
-                    <span key={s} className="px-3 py-1 bg-gray-800 rounded-full">{s}</span>
-                  ))}
+                <div className="flex gap-3 text-sm flex-wrap py-2">
+                    {p.stack.map((s) => (
+                      <span key={s} className="px-2 py-0.5 bg-gray-800 w-auto rounded-full text-center">{s}</span>
+                    ))}
                 </div>
               </motion.div>
             ))}
@@ -143,19 +143,35 @@ const skills = [
 
 const projects = [
   {
-    title: "Secure Form Platform",
-    desc: "Dynamic forms with role‑based access and OAuth2 security.",
-    stack: ["Angular", "Spring Boot", "OAuth2"],
+    title: "Microservices-based e-commerce platform",
+    desc: "E-commerce platform designed on a Spring Boot microservices architecture with React frontend, incorporating API Gateway patterns, Kafka event streaming, JWT-based security, Stripe payments, and comprehensive monitoring through ELK, Zipkin, and Grafana.",
+    stack: [
+      'Spring Boot',
+      'Spring Cloud',
+      'Microservices',
+      'API Gateway',
+      'Service Discovery',
+      'JWT Authentication',
+      'Resilience4j',
+      'Apache Kafka',
+      'Stripe API',
+      'ELK Stack',
+      'Zipkin',
+      'Prometheus',
+      'Grafana',
+      'React',
+      'CSS'
+    ],
   },
   {
-    title: "Microservice Travel Planner",
-    desc: "Distributed system with API gateway, auth, and async processing.",
-    stack: ["Spring Cloud", "React", "PostgreSQL"],
+    title: "Intern Management Desktop App",
+    desc: "Automating the workflow of intern registration with Electron.js. This app replaces messy paperwork with logic-driven dynamic forms and instantly generates all necessary compliance documents in Word, Excel, or PDF formats.",
+    stack: ['Electron.js', 'Node.js', 'Word/PDF/Excel'],
   },
   {
-    title: "Graph Visualizer",
-    desc: "Interactive graph data‑structure visualizer built from scratch.",
-    stack: ["Angular", "TypeScript"],
+    title: "IntelliJ Locale Key Explorer",
+    desc: "IntelliJ plugin that reads JSON locale files, displays key chains with their values in a table, allows developers to search by keys or values, and copies full paths to the clipboard with a single click — simplifying locale management and built with Kotlin, IntelliJ SDK, and Gradle.",
+    stack: ["Kotlin", "IntelliJ Platform SDK", "Gradle", "ToolWindowFactory", "Action", "MouseAdapter"],
   },
 ];
 
@@ -183,17 +199,12 @@ const experience = [
     Enterprise e-wallet platform built with Spring Boot microservices, React, and Oracle, integrating external banking operators, role & plafond management, and real e-banking transaction flows.
     `,
     Highlights: [
-      'Enterprise e-wallet platform integrated with an e-banking ecosystem',
-      'Microservices architecture using Spring Boot',
-      'External operator API integration for transaction confirmation',
-      'Shared transaction flow extended via inherited controllers and services',
-      'Role and plafond management across client, admin, and banking platforms',
-      'Oracle database integration with structured SQL script organization',
-      'Frontend features built with React',
-      'Postman collections shared with mobile teams for parallel development',
-      'On-site deployment, testing, and bug fixing in client environments',
-      'Strong collaboration with finance teams and e-banking stakeholders'
-    ],
+    "Enterprise e-wallet platform integrated with an e-banking ecosystem using Spring Boot microservices",
+    "External operator API integrations and extended shared transaction flows via inherited services",
+    "Role and plafond management across client, admin, and banking platforms",
+    "Oracle DB integration with structured SQL scripts and React-based frontend features",
+    "On-site deployment, testing, bug fixing, and close collaboration with finance and e-banking teams"
+  ],
     date: 'Feb 2024 - Jul 2024 · 6 mounths → Full-Time (Jul 2024 – Present)',
     adresse: 'Casablanca-Settat, Morocco',
     icon: '/adria_logo.png'
@@ -224,17 +235,13 @@ const experience = [
     Microservices-based e-commerce platform using Spring Boot & React, featuring API Gateway architecture, Kafka messaging, JWT security, Stripe payments, and full observability with ELK, Zipkin, and Grafana.
     `,
     Highlights: [
-      'Microservices architecture with API Gateway & service discovery',
-      'Secure authentication using JWT',
-      'Stripe API integration for payment processing',
-      'Fault-tolerant synchronous calls using Resilience4j',
-      'Asynchronous, event-driven messaging with Kafka',
-      'Centralized logging with ELK Stack',
-      'Distributed tracing using Zipkin',
-      'Performance monitoring via Prometheus & Grafana',
-      'Frontend built with React and custom CSS',
-      'Designed and implemented during a professional internship'
-    ],
+    "Spring Boot microservices architecture integrated with an e-banking ecosystem",
+    "External operator API integrations and shared transaction flow extensions",
+    "Role and plafond management across client, admin, and banking platforms",
+    "Oracle database integration with structured SQL scripts and React frontend features",
+    "On-site deployment, testing, and collaboration with finance and e-banking stakeholders"
+  ]
+  ,
     date: 'Jul 2023 - Aug 2023 · 2 mounths',
     adresse: 'Khouribga, Béni Mellal-Khénifra, Morocco',
     icon: '/ensa_logo.png'
