@@ -1,10 +1,12 @@
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { CalendarRange, Github, Linkedin, Mail, MapPin } from "lucide-react";
-
+import { experience, projects, skills } from "./data";
 
 export default function App() {
+  const { scrollYProgress } = useScroll();
+
   return (
-    <div className="min-h-screen bg-gray-950 text-gray-100">
+    <div className="min-h-screen bg-gray-950 text-gray-100" >
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full z-50 bg-gray-950/80 backdrop-blur border-b border-gray-800">
         <div className="flex justify-between items-center px-6 md:px-20 py-4">
@@ -18,6 +20,19 @@ export default function App() {
           </div>
         </div>
       </nav>
+      <motion.div
+                id="scroll-indicator"
+                style={{
+                    scaleX: scrollYProgress,
+                    position: "fixed",
+                    top:60,
+                    left: 0,
+                    right: 0,
+                    height: 5,
+                    originX: 0,
+                    backgroundColor: "#ff0088",
+                }}
+            />
 
       <div className="px-6 md:px-20 pt-24">
         {/* HERO */}
@@ -44,7 +59,7 @@ export default function App() {
           <h2 className="text-3xl font-semibold mb-12">Experience</h2>
           <div className="space-y-6">
             {experience.map((e) => (
-              <div className="bg-gray-900 p-6 rounded-2xl flex gap-2">
+              <div key={e.title} className="bg-gray-900 p-6 rounded-2xl flex gap-2">
                 <img src={e.icon} alt="company icon" className="w-30 h-25 rounded-2xl " />
                 <div>
                   <h3 className="font-semibold">{e.title} • {e.role}</h3>
@@ -65,7 +80,7 @@ export default function App() {
                   </p>
                   <ul className="list-disc pl-4">
                     {e.Highlights.map((hightlight) => (
-                      <li><span className="text-gray-500 text-sm mt-2">{hightlight}</span></li>
+                      <li key={hightlight}><span className="text-gray-500 text-sm mt-2">{hightlight}</span></li>
                     ))}
                   </ul>
                 </div>
@@ -102,13 +117,13 @@ export default function App() {
         <section id="skills" className="py-24">
           <h2 className="text-3xl font-semibold mb-12">Skills</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            {skills.map((s) => (
+        {skills.map((s) => (
               <div key={s.title} className="bg-gray-900 p-6 rounded-2xl">
                 <h3 className="font-semibold mb-2">{s.title}</h3>
                 <p className="text-gray-400 text-sm">{s.items}</p>
               </div>
             ))}
-          </div>
+      </div>
         </section>
 
         {/* CONTACT */}
@@ -125,145 +140,3 @@ export default function App() {
     </div>
   );
 }
-
-const skills = [
-  {
-    title: "Backend",
-    items: "Java, Spring Boot, Spring Security, JPA, Hibernate, OAuth2, Microservices",
-  },
-  {
-    title: "Frontend",
-    items: "Angular, React, TypeScript, Tailwind CSS, HTML, CSS",
-  },
-  {
-    title: "Database & Tools",
-    items: "PostgreSQL, Oracle, Git, Docker, REST APIs",
-  },
-];
-
-const projects = [
-  {
-    title: "Microservices-based e-commerce platform",
-    desc: "E-commerce platform designed on a Spring Boot microservices architecture with React frontend, incorporating API Gateway patterns, Kafka event streaming, JWT-based security, Stripe payments, and comprehensive monitoring through ELK, Zipkin, and Grafana.",
-    stack: [
-      'Spring Boot',
-      'Spring Cloud',
-      'Microservices',
-      'API Gateway',
-      'Service Discovery',
-      'JWT Authentication',
-      'Resilience4j',
-      'Apache Kafka',
-      'Stripe API',
-      'ELK Stack',
-      'Zipkin',
-      'Prometheus',
-      'Grafana',
-      'React',
-      'CSS'
-    ],
-  },
-  {
-    title: "Intern Management Desktop App",
-    desc: "Automating the workflow of intern registration with Electron.js. This app replaces messy paperwork with logic-driven dynamic forms and instantly generates all necessary compliance documents in Word, Excel, or PDF formats.",
-    stack: ['Electron.js', 'Node.js', 'Word/PDF/Excel'],
-  },
-  {
-    title: "IntelliJ Locale Key Explorer",
-    desc: "IntelliJ plugin that reads JSON locale files, displays key chains with their values in a table, allows developers to search by keys or values, and copies full paths to the clipboard with a single click — simplifying locale management and built with Kotlin, IntelliJ SDK, and Gradle.",
-    stack: ["Kotlin", "IntelliJ Platform SDK", "Gradle", "ToolWindowFactory", "Action", "MouseAdapter"],
-  },
-];
-
-const experience = [
-  {
-    title: 'E-Wallet & E-Banking Integration Platform',
-    role: 'Full Stack Engineer',
-    stack: [
-      'Spring Boot',
-      'Microservices',
-      'REST APIs',
-      'External API Integration',
-      'Oracle Database',
-      'React',
-      'Java',
-      'SQL',
-      'Postman',
-      'Role-Based Access Control',
-      'E-Banking Systems',
-      'Financial Transaction Processing'
-    ],
-    company: 'Adria Business & Technology',
-    type: 'Internship',
-    description: `
-    Enterprise e-wallet platform built with Spring Boot microservices, React, and Oracle, integrating external banking operators, role & plafond management, and real e-banking transaction flows.
-    `,
-    Highlights: [
-    "Enterprise e-wallet platform integrated with an e-banking ecosystem using Spring Boot microservices",
-    "External operator API integrations and extended shared transaction flows via inherited services",
-    "Role and plafond management across client, admin, and banking platforms",
-    "Oracle DB integration with structured SQL scripts and React-based frontend features",
-    "On-site deployment, testing, bug fixing, and close collaboration with finance and e-banking teams"
-  ],
-    date: 'Feb 2024 - Jul 2024 · 6 mounths → Full-Time (Jul 2024 – Present)',
-    adresse: 'Casablanca-Settat, Morocco',
-    icon: '/adria_logo.png'
-  },
-  {
-    title: 'Scalable E-Commerce Platform',
-    role: 'Full Stack Engineer',
-    stack: [
-      'Spring Boot',
-      'Spring Cloud',
-      'Microservices',
-      'API Gateway',
-      'Service Discovery',
-      'JWT Authentication',
-      'Resilience4j',
-      'Apache Kafka',
-      'Stripe API',
-      'ELK Stack',
-      'Zipkin',
-      'Prometheus',
-      'Grafana',
-      'React',
-      'CSS'
-    ],
-    company: 'Ecole Nationale des Sciences Appliquées de Khouribga',
-    type: 'Internship',
-    description: `
-    Microservices-based e-commerce platform using Spring Boot & React, featuring API Gateway architecture, Kafka messaging, JWT security, Stripe payments, and full observability with ELK, Zipkin, and Grafana.
-    `,
-    Highlights: [
-    "Spring Boot microservices architecture integrated with an e-banking ecosystem",
-    "External operator API integrations and shared transaction flow extensions",
-    "Role and plafond management across client, admin, and banking platforms",
-    "Oracle database integration with structured SQL scripts and React frontend features",
-    "On-site deployment, testing, and collaboration with finance and e-banking stakeholders"
-  ]
-  ,
-    date: 'Jul 2023 - Aug 2023 · 2 mounths',
-    adresse: 'Khouribga, Béni Mellal-Khénifra, Morocco',
-    icon: '/ensa_logo.png'
-  },
-  {
-    title: 'Intern Management Desktop App',
-    role: 'Full Stack Engineer',
-    stack: ['Electron.js', 'Node.js', 'Word/PDF/Excel'],
-    company: 'OCP Group',
-    type: 'Internship',
-    description: `
-    Desktop app that automates intern registration using dynamic forms and generates Word / Excel / PDF documents from structured data — built with Electron.js.
-    `,
-    Highlights: [
-      'Cross-platform desktop application (Electron.js)',
-      'Form-driven UI with structured data validation',
-      'Automated document generation (Word, Excel, PDF)',
-      'Focus on real business workflows and productivity',
-      'Built and delivered during a professional internship'
-    ],
-    date: 'Aug 2022 · 1 mounth',
-    adresse: 'Khouribga, Béni Mellal-Khénifra, Morocco',
-    icon: '/ocp_logo.jpg'
-  }
-]
