@@ -50,6 +50,11 @@ export const projects = [
     desc: "IntelliJ plugin that reads JSON locale files, displays key chains with their values in a table, allows developers to search by keys or values, and copies full paths to the clipboard with a single click — simplifying locale management and built with Kotlin, IntelliJ SDK, and Gradle.",
     stack: ["Kotlin", "IntelliJ Platform SDK", "Gradle", "ToolWindowFactory", "Action", "MouseAdapter"],
   },
+  {
+    title: "Warranty Management Module for Odoo",
+    desc: "A custom Odoo module designed to centralize warranty tracking and claim management for both supplier and customer products. It automates warranty expiration monitoring, claims validation, and notifications, ensuring better control, traceability, and communication across the system.",
+    stack: ["Odoo (Custom Module Development)", "Python", "PostgreSQL", "Odoo ORM", "Odoo Mail / Notifications", "Odoo Product & Invoicing Modules Integration"]
+  },
 ];
 
 export const experience = [
